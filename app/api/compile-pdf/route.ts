@@ -83,7 +83,7 @@ export async function POST(request: Request) {
       });
     }
 
-    console.log('[COMPILE CACHE] CACHE MISS - Compiling with octree-compile', {
+    console.log('[COMPILE CACHE] CACHE MISS - Compiling with bibby-compile', {
       cacheKey: cacheKey?.substring(0, 16) + '...',
       projectId: body.projectId,
       filesCount: body.files.length,
@@ -99,7 +99,7 @@ export async function POST(request: Request) {
       !compileResult.base64PDF ||
       !compileResult.pdfBuffer
     ) {
-      // Include partial PDF in error response if available from octree-compile
+      // Include partial PDF in error response if available from bibby-compile
       const errorResponse: Record<string, unknown> = {
         ...compileResult.error,
         suggestion:

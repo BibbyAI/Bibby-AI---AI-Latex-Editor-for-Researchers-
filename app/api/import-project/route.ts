@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
 
     // Download the ZIP file from Supabase Storage
     const { data: fileData, error: downloadError } = await supabase.storage
-      .from('octree')
+      .from('bibby')
       .download(storagePath);
 
     if (downloadError || !fileData) {
@@ -193,7 +193,7 @@ export async function POST(request: NextRequest) {
         }
 
         const { error: uploadError } = await supabase.storage
-          .from('octree')
+          .from('bibby')
           .upload(`projects/${project.id}/${file.name}`, blob, {
             cacheControl: '3600',
             upsert: false,
@@ -222,7 +222,7 @@ export async function POST(request: NextRequest) {
     // Clean up temp file after successful processing
     if (tempStoragePath) {
       await supabase.storage
-        .from('octree')
+        .from('bibby')
         .remove([tempStoragePath])
         .catch((err) => console.error('Failed to cleanup temp file:', err));
     }
@@ -241,7 +241,7 @@ export async function POST(request: NextRequest) {
     if (tempStoragePath) {
       const supabase = await createClient();
       await supabase.storage
-        .from('octree')
+        .from('bibby')
         .remove([tempStoragePath])
         .catch((err) => console.error('Failed to cleanup temp file:', err));
     }

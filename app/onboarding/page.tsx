@@ -32,7 +32,7 @@ import {
   USE_CASE_OPTIONS,
   TOTAL_STEPS,
 } from './constants';
-import { OctreeLogo } from '@/components/icons/octree-logo';
+import { BibbyAILogo } from '@/components/icons/bibby-logo';
 import { createCheckoutSession } from '@/lib/requests/subscription';
 import { getUserUsageStatus, upsertUserUsage } from '@/lib/requests/user';
 import { AuthMarketingSection } from '@/components/auth/auth-marketing-section';
@@ -86,7 +86,7 @@ export default function OnboardingPage() {
         return;
       }
       if (!referralSource) {
-        toast.error('Please select how you found Octree');
+        toast.error('Please select how you found Bibby AI');
         return;
       }
 
@@ -184,7 +184,7 @@ export default function OnboardingPage() {
         return (
           <>
             <div className="space-y-1.5">
-              <h2 className="text-2xl font-semibold leading-none tracking-tight">Welcome to Octree!</h2>
+              <h2 className="text-2xl font-semibold leading-none tracking-tight">Welcome to Bibby AI!</h2>
               <p className="text-sm text-muted-foreground">
                 Let's start by learning a bit about you.
               </p>
@@ -246,7 +246,7 @@ export default function OnboardingPage() {
         return (
           <>
             <div className="space-y-1.5">
-              <h2 className="text-2xl font-semibold leading-none tracking-tight">Subscribe to Octree Pro</h2>
+              <h2 className="text-2xl font-semibold leading-none tracking-tight">Subscribe to Bibby AI Pro</h2>
               <p className="text-sm text-muted-foreground">
                 Everything you need for professional LaTeX documents.
               </p>
@@ -280,7 +280,7 @@ export default function OnboardingPage() {
               </div>
 
               <div>
-                <p className="mb-4 text-sm font-semibold">Octree includes</p>
+                <p className="mb-4 text-sm font-semibold">Bibby AI includes</p>
                 <FeatureList />
               </div>
             </div>
@@ -304,9 +304,9 @@ export default function OnboardingPage() {
       <div className="flex w-full flex-col p-6 lg:w-1/2">
         {/* Logo and name at top */}
         <div className="mb-8 flex items-center gap-2">
-          <OctreeLogo className="h-6 w-6" />
+          <BibbyAILogo className="h-6 w-6" />
           <span className="text-lg font-medium tracking-tight text-neutral-900">
-            Octree
+            Bibby AI
           </span>
         </div>
 

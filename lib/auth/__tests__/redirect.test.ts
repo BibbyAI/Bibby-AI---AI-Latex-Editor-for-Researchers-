@@ -4,30 +4,30 @@ import { buildRedirectUrl, resolveRedirectBase } from '../redirect';
 describe('Redirect URL handling', () => {
   it('prefers the direct host header over forwarded host', () => {
     const headers = new Headers({
-      host: 'ai-latex-editor.useoctree.com',
-      'x-forwarded-host': 'tools.useoctree.com',
+      host: 'ai-latex-editor.trybibby.com',
+      'x-forwarded-host': 'tools.trybibby.com',
       'x-forwarded-proto': 'https',
     });
 
-    const base = resolveRedirectBase(headers, new URL('https://ai-latex-editor.useoctree.com/auth/oauth'));
-    expect(base.origin).toBe('https://ai-latex-editor.useoctree.com');
+    const base = resolveRedirectBase(headers, new URL('https://ai-latex-editor.trybibby.com/auth/oauth'));
+    expect(base.origin).toBe('https://ai-latex-editor.trybibby.com');
 
-    const redirect = buildRedirectUrl(headers, 'https://ai-latex-editor.useoctree.com', '/projects/123');
-    expect(redirect).toBe('https://ai-latex-editor.useoctree.com/projects/123');
+    const redirect = buildRedirectUrl(headers, 'https://ai-latex-editor.trybibby.com', '/projects/123');
+    expect(redirect).toBe('https://ai-latex-editor.trybibby.com/projects/123');
   });
 
   it('falls back to origin host when proxy host differs', () => {
     const headers = new Headers({
-      host: 'tools.useoctree.com',
-      'x-forwarded-host': 'app.useoctree.com',
+      host: 'tools.trybibby.com',
+      'x-forwarded-host': 'app.trybibby.com',
       'x-forwarded-proto': 'https',
     });
 
-    const base = resolveRedirectBase(headers, new URL('https://app.useoctree.com/auth/oauth'));
-    expect(base.origin).toBe('https://app.useoctree.com');
+    const base = resolveRedirectBase(headers, new URL('https://app.trybibby.com/auth/oauth'));
+    expect(base.origin).toBe('https://app.trybibby.com');
 
-    const redirect = buildRedirectUrl(headers, 'https://app.useoctree.com', '/projects/123');
-    expect(redirect).toBe('https://app.useoctree.com/projects/123');
+    const redirect = buildRedirectUrl(headers, 'https://app.trybibby.com', '/projects/123');
+    expect(redirect).toBe('https://app.trybibby.com/projects/123');
   });
 
   it('falls back to forwarded host when allow-listed', () => {
@@ -38,14 +38,14 @@ describe('Redirect URL handling', () => {
 
     const base = resolveRedirectBase(
       headers,
-      new URL('https://ai-latex-editor.useoctree.com/auth/oauth'),
+      new URL('https://ai-latex-editor.trybibby.com/auth/oauth'),
       'preview.ai-latex-editor.vercel.app'
     );
     expect(base.origin).toBe('https://preview.ai-latex-editor.vercel.app');
 
     const redirect = buildRedirectUrl(
       headers,
-      'https://ai-latex-editor.useoctree.com',
+      'https://ai-latex-editor.trybibby.com',
       '/projects/123',
       'preview.ai-latex-editor.vercel.app'
     );
@@ -59,7 +59,7 @@ describe('Redirect URL handling', () => {
       'x-forwarded-proto': 'https',
     });
 
-    const base = resolveRedirectBase(headers, new URL('https://ai-latex-editor.useoctree.com/auth/oauth'));
-    expect(base.origin).toBe('https://ai-latex-editor.useoctree.com');
+    const base = resolveRedirectBase(headers, new URL('https://ai-latex-editor.trybibby.com/auth/oauth'));
+    expect(base.origin).toBe('https://ai-latex-editor.trybibby.com');
   });
 });

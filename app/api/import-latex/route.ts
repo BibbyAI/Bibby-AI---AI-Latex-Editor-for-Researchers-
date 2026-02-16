@@ -4,7 +4,7 @@ import { TablesInsert } from '@/database.types';
 import { getContentTypeByFilename } from '@/lib/constants/file-types';
 
 const allowedOrigin =
-  process.env.ALLOWED_TOOLS_ORIGIN || 'https://tools.useoctree.com';
+  process.env.ALLOWED_TOOLS_ORIGIN || 'https://tools.trybibby.com';
 
 function withCors(response: NextResponse) {
   response.headers.set('Access-Control-Allow-Origin', allowedOrigin);
@@ -88,7 +88,7 @@ export async function POST(request: NextRequest) {
     const blob = new Blob([content], { type: mimeType });
 
     const { error: uploadError } = await supabase.storage
-      .from('octree')
+      .from('bibby')
       .upload(`projects/${project.id}/main.tex`, blob, {
         cacheControl: '3600',
         upsert: false,

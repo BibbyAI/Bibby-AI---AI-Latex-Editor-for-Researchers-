@@ -29,7 +29,7 @@ export async function GET(request: Request) {
       const isFromTools = 
         next.includes('/projects/') || 
         next.includes('/files/') ||
-        request.headers.get('referer')?.includes('tools.useoctree.com');
+        request.headers.get('referer')?.includes('tools.trybibby.com');
 
       if (!existingUsage?.onboarding_completed && isFromTools) {
         await supabase

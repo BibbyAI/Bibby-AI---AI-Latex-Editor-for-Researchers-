@@ -22,7 +22,7 @@ export function ImageViewer({ projectId, fileName }: ImageViewerProps) {
       try {
         const supabase = createClient();
         const { data: imageBlob, error: downloadError } = await supabase.storage
-          .from('octree')
+          .from('bibby')
           .download(`projects/${projectId}/${fileName}`);
 
         if (downloadError || !imageBlob) {

@@ -1,6 +1,6 @@
 # Claude Server
 
-Standalone Express server running the Claude Agent SDK for the Octree LaTeX Editor.
+Standalone Express server running the Claude Agent SDK for the Bibby AI LaTeX Editor.
 
 ## 📋 Overview
 
@@ -460,5 +460,5 @@ For issues:
 
 **Last Updated**: October 8, 2025  
 **Version**: 1.0.0  
-**Maintainer**: Octree AI Team
+**Maintainer**: Bibby AI Team
 

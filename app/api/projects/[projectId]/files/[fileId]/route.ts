@@ -25,7 +25,7 @@ export async function GET(
     const { projectId, fileId } = await params;
 
     const { data: storageFiles, error: listError } = await supabase.storage
-      .from('octree')
+      .from('bibby')
       .list(`projects/${projectId}`);
 
     if (listError || !storageFiles) {
@@ -42,7 +42,7 @@ export async function GET(
     }
 
     const { data: fileBlob, error: downloadError } = await supabase.storage
-      .from('octree')
+      .from('bibby')
       .download(`projects/${projectId}/${file.name}`);
 
     if (downloadError || !fileBlob) {
@@ -116,7 +116,7 @@ export async function PUT(
     }
 
     const { data: storageFiles, error: listError } = await supabase.storage
-      .from('octree')
+      .from('bibby')
       .list(`projects/${projectId}`);
 
     if (listError || !storageFiles) {
@@ -147,7 +147,7 @@ export async function PUT(
     }
 
     const { error: uploadError } = await supabase.storage
-      .from('octree')
+      .from('bibby')
       .upload(`projects/${projectId}/${file.name}`, blob, {
         cacheControl: '3600',
         upsert: true,

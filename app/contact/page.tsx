@@ -224,10 +224,10 @@ export default function ContactPage() {
             <p className="text-sm text-neutral-500">
               Or reach us directly at{' '}
               <a
-                href="mailto:basil@useoctree.online"
+                href="mailto:basil@trybibby.com"
                 className="text-blue-600 hover:text-blue-700"
               >
-                basil@useoctree.online
+                basil@trybibby.com
               </a>
             </p>
           </div>

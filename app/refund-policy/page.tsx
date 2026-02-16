@@ -85,10 +85,10 @@ export default function RefundPolicyPage() {
                                     If you believe there has been a billing mistake, please contact
                                     us at{' '}
                                     <a
-                                        href="mailto:basil@useoctree.online"
+                                        href="mailto:basil@trybibby.com"
                                         className="text-blue-600 hover:text-blue-700"
                                     >
-                                        basil@useoctree.online
+                                        basil@trybibby.com
                                     </a>
                                 </p>
                             </div>

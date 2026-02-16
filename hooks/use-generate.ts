@@ -161,7 +161,7 @@ export function useGenerate(options: UseGenerateOptions = {}) {
         {
           id: `assistant-${doc.id}`,
           role: 'assistant',
-          content: 'Document generated successfully. Preview it below or open it in Octree.',
+          content: 'Document generated successfully. Preview it below or open it in Bibby AI.',
         },
       ];
     }
@@ -374,7 +374,7 @@ export function useGenerate(options: UseGenerateOptions = {}) {
             updateLastMessage(
               (m) =>
                 (m.content =
-                  'Document generated successfully. Preview it below or open it in Octree.')
+                  'Document generated successfully. Preview it below or open it in Bibby AI.')
             );
             break;
           case 'error':
@@ -387,7 +387,7 @@ export function useGenerate(options: UseGenerateOptions = {}) {
         // Note: original code uploaded here, we moved it up.
         // We do NOT need to upload again.
 
-        const successMessage = 'Document generated successfully. Preview it below or open it in Octree.';
+        const successMessage = 'Document generated successfully. Preview it below or open it in Bibby AI.';
         const newUserMessage = {
           id: `user-${documentId}-${Date.now()}`,
           role: 'user' as const,
@@ -510,7 +510,7 @@ export function useGenerate(options: UseGenerateOptions = {}) {
             }
           }
 
-          const successMessage = 'Document generated successfully. Preview it below or open it in Octree.';
+          const successMessage = 'Document generated successfully. Preview it below or open it in Bibby AI.';
           const finalAssistantContent = isAbort ? successMessage : (streamedContent || 'Generation failed.');
 
           const partialAssistantMessage = {

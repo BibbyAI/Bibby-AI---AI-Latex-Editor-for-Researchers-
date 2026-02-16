@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback, memo } from 'react';
 import { useRouter } from 'next/navigation';
 
-const GENERATE_ONBOARDING_STORAGE_KEY = 'octree_generate_onboarding_completed';
+const GENERATE_ONBOARDING_STORAGE_KEY = 'bibbyai_generate_onboarding_completed';
 import {
   ArrowUp,
   Loader2,
@@ -213,7 +213,7 @@ export function GeneratePageContent({
     }
   }, [generateDocument]);
 
-  const handleOpenInOctree = useCallback(async () => {
+  const handleOpenInBibbyAI = useCallback(async () => {
     if (!currentLatex || isCreatingProject) return;
 
     setIsCreatingProject(true);
@@ -322,7 +322,7 @@ export function GeneratePageContent({
                       <DocumentPreview
                         latex={currentLatex}
                         title={currentTitle}
-                        onOpenInOctree={handleOpenInOctree}
+                        onOpenInBibbyAI={handleOpenInBibbyAI}
                         isCreatingProject={isCreatingProject}
                       />
                     )}

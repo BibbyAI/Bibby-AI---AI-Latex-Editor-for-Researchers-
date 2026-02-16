@@ -7,7 +7,7 @@ ON storage.objects
 FOR INSERT
 TO authenticated
 WITH CHECK (
-  bucket_id = 'octree' AND
+  bucket_id = 'bibby' AND
   (storage.foldername(name))[1] = 'temp-imports' AND
   (storage.foldername(name))[2] = auth.uid()::text
 );
@@ -18,7 +18,7 @@ ON storage.objects
 FOR SELECT
 TO authenticated
 USING (
-  bucket_id = 'octree' AND
+  bucket_id = 'bibby' AND
   (storage.foldername(name))[1] = 'temp-imports' AND
   (storage.foldername(name))[2] = auth.uid()::text
 );
@@ -29,7 +29,7 @@ ON storage.objects
 FOR DELETE
 TO authenticated
 USING (
-  bucket_id = 'octree' AND
+  bucket_id = 'bibby' AND
   (storage.foldername(name))[1] = 'temp-imports' AND
   (storage.foldername(name))[2] = auth.uid()::text
 );

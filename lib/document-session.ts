@@ -11,7 +11,7 @@ export interface DocumentSession {
   interactionCount: number;
 }
 
-const STORAGE_KEY_PREFIX = 'octree_doc_session_';
+const STORAGE_KEY_PREFIX = 'bibbyai_doc_session_';
 
 function getStorageKey(documentId: string): string {
   return `${STORAGE_KEY_PREFIX}${documentId}`;

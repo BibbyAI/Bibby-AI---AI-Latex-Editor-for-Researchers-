@@ -34,7 +34,7 @@ async function listAllFiles(
     : `projects/${projectId}`;
 
   const { data: items, error } = await supabase.storage
-    .from('octree')
+    .from('bibby')
     .list(listPath, {
       sortBy: { column: 'created_at', order: 'desc' },
     });
@@ -84,7 +84,7 @@ export const getProjectFiles = async (
       try {
         const cacheBuster = `?t=${Date.now()}`;
         const { data: fileBlob, error: downloadError } = await supabase.storage
-          .from('octree')
+          .from('bibby')
           .download(`projects/${projectId}/${storageFile.name}${cacheBuster}`);
 
         if (downloadError || !fileBlob) {
@@ -230,7 +230,7 @@ export const importProject = async (
     const uploadStartTime = Date.now();
     
     const { data: uploadData, error: uploadError } = await supabase.storage
-      .from('octree')
+      .from('bibby')
       .upload(tempPath, file, {
         cacheControl: '3600',
         upsert: false,
@@ -279,7 +279,7 @@ export const importProject = async (
     if (!response.ok) {
       console.error('[Import] API returned error:', data);
       // Clean up temp file on error
-      await supabase.storage.from('octree').remove([tempPath]);
+      await supabase.storage.from('bibby').remove([tempPath]);
       return {
         success: false,
         error: data.error || 'Failed to import project',
@@ -291,7 +291,7 @@ export const importProject = async (
   } catch (error) {
     console.error('[Import] Exception during import:', error);
     // Clean up temp file on error
-    await supabase.storage.from('octree').remove([tempPath]).catch(() => {});
+    await supabase.storage.from('bibby').remove([tempPath]).catch(() => {});
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Failed to import project',
@@ -315,7 +315,7 @@ export const renameFile = async (
   }
 
   const { error: moveError } = await supabase.storage
-    .from('octree')
+    .from('bibby')
     .move(
       `projects/${projectId}/${currentName}`,
       `projects/${projectId}/${newName}`
@@ -342,7 +342,7 @@ export const deleteFile = async (
   }
 
   const { error: deleteError } = await supabase.storage
-    .from('octree')
+    .from('bibby')
     .remove([`projects/${projectId}/${fileName}`]);
 
   if (deleteError) {
@@ -377,7 +377,7 @@ export const moveFile = async (
   }
 
   const { error: moveError } = await supabase.storage
-    .from('octree')
+    .from('bibby')
     .move(
       `projects/${projectId}/${sourcePath}`,
       `projects/${projectId}/${destPath}`
@@ -426,7 +426,7 @@ export const moveFolder = async (
     const newPath = `projects/${projectId}/${destPath}/${relativePath}`;
 
     const { error: moveError } = await supabase.storage
-      .from('octree')
+      .from('bibby')
       .move(filePath, newPath);
 
     if (moveError) {
@@ -453,7 +453,7 @@ export const createFolder = async (
   const blob = new Blob([''], { type: 'text/plain' });
 
   const { error: uploadError } = await supabase.storage
-    .from('octree')
+    .from('bibby')
     .upload(`projects/${projectId}/${gitkeepPath}`, blob, {
       cacheControl: '3600',
       upsert: false,
@@ -481,7 +481,7 @@ export const renameFolder = async (
   }
 
   const { data: files, error: listError } = await supabase.storage
-    .from('octree')
+    .from('bibby')
     .list(`projects/${projectId}`, {
       search: currentPath,
     });
@@ -500,7 +500,7 @@ export const renameFolder = async (
     const newFilePath = `projects/${projectId}/${newPath}/${relativePath}`;
 
     const { error: moveError } = await supabase.storage
-      .from('octree')
+      .from('bibby')
       .move(oldPath, newFilePath);
 
     if (moveError) {
@@ -512,7 +512,7 @@ export const renameFolder = async (
   const gitkeepNewPath = `projects/${projectId}/${newPath}/.gitkeep`;
 
   const { error: gitkeepMoveError } = await supabase.storage
-    .from('octree')
+    .from('bibby')
     .move(gitkeepOldPath, gitkeepNewPath);
 
   if (gitkeepMoveError) {
@@ -530,7 +530,7 @@ async function listFolderFiles(
 
   async function listRecursive(path: string): Promise<void> {
     const { data: items, error } = await supabase.storage
-      .from('octree')
+      .from('bibby')
       .list(path);
 
     if (error || !items) return;
@@ -571,7 +571,7 @@ export const deleteFolder = async (
   if (filePaths.length === 0) {
     // Try to delete just the .gitkeep placeholder
     const { error } = await supabase.storage
-      .from('octree')
+      .from('bibby')
       .remove([`projects/${projectId}/${folderPath}/.gitkeep`]);
 
     if (error) {
@@ -582,7 +582,7 @@ export const deleteFolder = async (
 
   // Delete all files in the folder
   const { error: deleteError } = await supabase.storage
-    .from('octree')
+    .from('bibby')
     .remove(filePaths);
 
   if (deleteError) {
@@ -612,7 +612,7 @@ export const checkFileExists = async (
     : `projects/${projectId}`;
 
   const { data, error } = await supabase.storage
-    .from('octree')
+    .from('bibby')
     .list(searchPath, {
       search: fileName,
     });
@@ -643,7 +643,7 @@ export const uploadFile = async (
     : `projects/${projectId}/${file.name}`;
 
   const { error: uploadError } = await supabase.storage
-    .from('octree')
+    .from('bibby')
     .upload(filePath, file, {
       cacheControl: '3600',
       upsert: upsert,

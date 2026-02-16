@@ -40,7 +40,7 @@ const GENERATE_STEPS = [
     target: 'generate-preview',
     title: 'Preview and open in editor',
     description:
-      'After generating, the document preview appears here. You can open it in the full Octree editor to edit, compile to PDF, and use AI chat for changes.',
+      'After generating, the document preview appears here. You can open it in the full Bibby AI editor to edit, compile to PDF, and use AI chat for changes.',
   },
 ] as const;
 

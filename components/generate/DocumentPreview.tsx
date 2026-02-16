@@ -32,11 +32,11 @@ interface SubscriptionData {
 interface DocumentPreviewProps {
     latex: string;
     title: string;
-    onOpenInOctree: () => void;
+    onOpenInBibbyAI: () => void;
     isCreatingProject: boolean;
 }
 
-export function DocumentPreview({ latex, title, onOpenInOctree, isCreatingProject }: DocumentPreviewProps) {
+export function DocumentPreview({ latex, title, onOpenInBibbyAI, isCreatingProject }: DocumentPreviewProps) {
     const [viewMode, setViewMode] = useState<'code' | 'pdf'>('code');
     const [pdfData, setPdfData] = useState<string | null>(null);
     const [pdfError, setPdfError] = useState<CompilationError | null>(null);
@@ -113,7 +113,7 @@ export function DocumentPreview({ latex, title, onOpenInOctree, isCreatingProjec
                 } else {
                     const compilationError: CompilationError = data.error || {
                         message: 'Compilation failed',
-                        details: 'Open in Octree to fix LaTeX errors'
+                        details: 'Open in Bibby AI to fix LaTeX errors'
                     };
                     setPdfError(compilationError);
                     return;
@@ -171,7 +171,7 @@ export function DocumentPreview({ latex, title, onOpenInOctree, isCreatingProjec
             } else {
                 const compilationError: CompilationError = data.error || {
                     message: 'Compilation failed',
-                    details: 'Open in Octree to fix LaTeX errors'
+                    details: 'Open in Bibby AI to fix LaTeX errors'
                 };
                 setPdfError(compilationError);
             }
@@ -231,7 +231,7 @@ export function DocumentPreview({ latex, title, onOpenInOctree, isCreatingProjec
                         </div>
 
                         <div>
-                            <p className="mb-4 text-sm font-semibold">Octree Pro includes</p>
+                            <p className="mb-4 text-sm font-semibold">Bibby AI Pro includes</p>
                             <FeatureList />
                         </div>
 
@@ -334,7 +334,7 @@ export function DocumentPreview({ latex, title, onOpenInOctree, isCreatingProjec
                 </Button>
                 <Button
                     variant="gradient"
-                    onClick={onOpenInOctree}
+                    onClick={onOpenInBibbyAI}
                     disabled={isCreatingProject}
                 >
                     {isCreatingProject ? (
@@ -342,7 +342,7 @@ export function DocumentPreview({ latex, title, onOpenInOctree, isCreatingProjec
                     ) : (
                         <ExternalLink className="h-4 w-4" />
                     )}
-                    Open in Octree
+                    Open in Bibby AI
                 </Button>
             </div>
         </Card>

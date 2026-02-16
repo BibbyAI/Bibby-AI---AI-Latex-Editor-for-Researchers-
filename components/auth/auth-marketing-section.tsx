@@ -192,7 +192,7 @@ function UseCaseCarousel({ useCases }: { useCases: { title: string; description:
 const testimonials = [
   {
     quote:
-      'Octree removes much of the tedium of resume formatting and journal typesetting, allowing me to spend that saved time focusing on the actual content and not just the presentation.',
+      'Bibby AI removes much of the tedium of resume formatting and journal typesetting, allowing me to spend that saved time focusing on the actual content and not just the presentation.',
     author: 'Jason Nguyen',
     role: 'Software Engineer at DoorDash',
   },

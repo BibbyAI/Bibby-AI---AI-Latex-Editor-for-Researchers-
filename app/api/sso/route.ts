@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 
-const allowedOrigin = process.env.ALLOWED_TOOLS_ORIGIN || 'https://tools.useoctree.com';
+const allowedOrigin = process.env.ALLOWED_TOOLS_ORIGIN || 'https://tools.trybibby.com';
 
 function withCors(res: NextResponse) {
   res.headers.set('Access-Control-Allow-Origin', allowedOrigin);

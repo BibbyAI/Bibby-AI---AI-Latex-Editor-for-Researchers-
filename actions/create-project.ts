@@ -59,7 +59,7 @@ export async function createProject(title: string) {
     const filePath = `projects/${data.id}/main.tex`;
 
     const { error: storageError } = await supabase.storage
-      .from('octree')
+      .from('bibby')
       .upload(filePath, defaultContent, {
         contentType: 'text/x-tex',
         upsert: false,
@@ -71,7 +71,7 @@ export async function createProject(title: string) {
     }
 
     const { data: urlData } = supabase.storage
-      .from('octree')
+      .from('bibby')
       .getPublicUrl(filePath);
 
     const fileToInsert: TablesInsert<'files'> = {

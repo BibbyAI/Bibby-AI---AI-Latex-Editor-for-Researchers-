@@ -56,9 +56,9 @@ export function PaywallDialog({ userEmail }: PaywallDialogProps) {
         onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <DialogHeader>
-          <DialogTitle>Subscribe to Octree</DialogTitle>
+          <DialogTitle>Subscribe to Bibby AI</DialogTitle>
           <DialogDescription>
-            Upgrade to continue using Octree's features.
+            Upgrade to continue using Bibby AI's features.
           </DialogDescription>
         </DialogHeader>
 
@@ -91,7 +91,7 @@ export function PaywallDialog({ userEmail }: PaywallDialogProps) {
           </div>
 
           <div>
-            <p className="mb-4 text-sm font-semibold">Octree Pro includes</p>
+            <p className="mb-4 text-sm font-semibold">Bibby AI Pro includes</p>
             <FeatureList />
           </div>
 

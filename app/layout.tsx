@@ -21,7 +21,7 @@ const satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Octree',
+  title: 'Bibby AI',
   description: 'A latex editor that uses AI to help you write latex',
 };
 

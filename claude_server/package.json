@@ -1,7 +1,7 @@
 {
   "name": "octra-agent-server",
   "version": "1.0.0",
-  "description": "Standalone Claude Agent service for Octree LaTeX Editor",
+  "description": "Standalone Claude Agent service for Bibby AI LaTeX Editor",
   "main": "agent-service.ts",
   "scripts": {
     "start": "tsx agent-service.ts",
@@ -10,7 +10,7 @@
     "deploy": "bash deploy.sh"
   },
   "keywords": ["claude", "agent", "latex", "ai"],
-  "author": "Octree AI",
+  "author": "Bibby AI",
   "license": "ISC",
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.1.5",

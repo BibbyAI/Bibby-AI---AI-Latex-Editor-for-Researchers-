@@ -426,7 +426,7 @@ export function SubscriptionStatus() {
 
         {/* Features */}
         <div>
-          <p className="mb-4 text-sm font-semibold">Octree Pro includes</p>
+          <p className="mb-4 text-sm font-semibold">Bibby AI Pro includes</p>
           <FeatureList />
         </div>
 

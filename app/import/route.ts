@@ -67,7 +67,7 @@ export async function GET(request: NextRequest) {
   const filePath = `projects/${project.id}/main.tex`;
 
   const { error: uploadError } = await supabase.storage
-    .from('octree')
+    .from('bibby')
     .upload(filePath, blob, {
       cacheControl: '3600',
       upsert: false,
@@ -81,7 +81,7 @@ export async function GET(request: NextRequest) {
 
   // Get public URL for the file
   const { data: urlData } = supabase.storage
-    .from('octree')
+    .from('bibby')
     .getPublicUrl(filePath);
 
   // Insert file record

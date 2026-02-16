@@ -38,7 +38,7 @@ export function SimplePDFViewer({ projectId, fileName }: SimplePDFViewerProps) {
       try {
         const supabase = createClient();
         const { data, error: downloadError } = await supabase.storage
-          .from('octree')
+          .from('bibby')
           .download(`projects/${projectId}/${fileName}`);
 
         if (downloadError) {

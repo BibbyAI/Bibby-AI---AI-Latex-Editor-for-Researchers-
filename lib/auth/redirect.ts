@@ -29,7 +29,7 @@ function parseHeaderList(value: string | undefined): string[] {
  * Resolve the host + protocol used for post-OAuth redirects.
  *
  * When the editor is launched from the Tools hub the request is proxied through
- * `tools.useoctree.com`, which populates `x-forwarded-host` with the Tools domain.
+ * `tools.trybibby.com`, which populates `x-forwarded-host` with the Tools domain.
  * If we redirect to that forwarded host the browser stays on the Tools origin and
  * the Supabase session cookie never reaches the editor domain. By preferring whichever
  * header matches the origin host we land back on the editor origin and the session

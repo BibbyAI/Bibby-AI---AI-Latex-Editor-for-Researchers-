@@ -4,7 +4,7 @@ import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 
-const STORAGE_KEY = 'octree_editor_onboarding_completed';
+const STORAGE_KEY = 'bibbyai_editor_onboarding_completed';
 const TARGETS = ['sidebar', 'fileSidebar', 'toolbar', 'editor', 'pdf', 'chat', 'userProfile'] as const;
 const TOTAL_STEPS = TARGETS.length;
 
