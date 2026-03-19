@@ -3,7 +3,7 @@
 <div align="center">
 
 <img src="https://raw.githubusercontent.com/NileshArnaiya/Bibby-AI---AI-Latex-Editor-for-Researchers-
-/main/assets/bibby-mascot.png" alt="Bibby AI Mascot" width="180"/>
+/master/assets/bibby-mascot.png" alt="Bibby AI Mascot" width="180"/>
 
 # Bibby AI — LaTeXBench-500 Benchmark
 
