@@ -2,8 +2,8 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/NileshArnaiya/Bibby-AI---AI-Latex-Editor-for-Researchers-
-/master/assets/bibby-mascot.png" alt="Bibby AI Mascot" width="180"/>
+<img src="assets/bibby-mascot.png" alt="Bibby AI Mascot" width="180"/>
+
 
 # Bibby AI — LaTeXBench-500 Benchmark
 
@@ -26,7 +26,7 @@
 ## 🖥️ The Editor
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/bibby-latex-benchmark/main/assets/bibby-editor-screenshot.png" alt="Bibby AI Editor — AI-powered LaTeX editor with real-time error detection, citation search, and live preview" width="100%"/>
+<img src="assets/Screenshot 2026-03-19 at 11.14.01.png" alt="Bibby AI Editor — AI-powered LaTeX editor with real-time error detection, citation search, and live preview" width="100%"/>
 
 *Bibby AI — AI-native LaTeX editor with real-time error detection, smart citation search, and live PDF preview. No plugins. No copy-paste. Everything in one place.*
 </div>
