@@ -2,7 +2,8 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/bibby-latex-benchmark/main/assets/bibby-mascot.png" alt="Bibby AI Mascot" width="180"/>
+<img src="https://raw.githubusercontent.com/NileshArnaiya/Bibby-AI---AI-Latex-Editor-for-Researchers-
+/main/assets/bibby-mascot.png" alt="Bibby AI Mascot" width="180"/>
 
 # Bibby AI — LaTeXBench-500 Benchmark
 
